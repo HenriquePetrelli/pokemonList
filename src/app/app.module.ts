@@ -11,6 +11,8 @@ import { PokemonCardsComponent } from '../components/pokemon-cards/pokemon-cards
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import {MatTabsModule} from '@angular/material/tabs';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
