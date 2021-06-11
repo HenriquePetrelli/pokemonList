@@ -14,9 +14,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .mat-step-icon .mat-icon {
-   display: none;
-  }
+  .mat-step-icon {
+    border-radius: 50%!important;
+    height: 50px!important;
+    width: 50px!important;
+
+}
 
   .mat-vertical-content {
     left: 36%;
@@ -28,15 +31,95 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .mat-stepper-vertical, .mat-stepper-horizontal {
-  z-index: 999;
+  z-index: 0;
+  margin-top: 0.4%;
   margin-left: 0;
   position: relative;
-  display: flex!important;
+  display: flex !important;
   overflow: auto;
+  overflow: hidden;
+  color: white;
+  font-size: 2rem;
+  width: 22%;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
   align-content: flex-start;
-  box-shadow: 0px 0px 10px 6px black;
+  box-shadow: 0px 0px 10px 6px #1c1c1c;
   justify-content: flex-start;
+  background-color: #1c1c1c;
+}
+
+.mat-toolbar {
+  top: 0;
+  position: fixed;
+  height: 8%;
+  z-index: 1;
+  background: #ec9b3b;
+  color: #fff;
+  box-shadow: 0px 0px 20px 5px black;
+}
+
+.mat-vertical-stepper-header {
+  display: flex;
+  align-items: center;
+  width: 148%;
+  margin-bottom: 9px;
+  height: 24px;
+}
+
+.mat-step-icon .mat-icon {
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  display: none;
+}
+
+.mat-vertical-stepper-header .mat-step-icon {
+margin-right: 17px!important;
+}
+
+.mat-step-header {
+  overflow: hidden;
+  width: 156%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-sizing: content-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: #3c8d51;
+    color: #fff;
+}
+
+.mat-step-label {
+    font-size: 1.2rem;
+}
+
+.mat-vertical-content-container {
+  margin-left: 48px!important;
+  margin-bottom: 8px!important;
+  border: 0;
+  position: relative;
+}
+
+.mat-vertical-content {
+  left: 45%;
+  outline: 0;
+  top: 12%;
+  position: fixed;
+  margin: auto;
+  text-align: center;
+}
+
+.mat-stepper-vertical-line::before {
+  border-left-width: 5px!important;
+  border-left-style: dotted!important;
+}
+
+.mat-stepper-vertical-line::before {
+  top: -8px;
+  bottom: -7px;
 }

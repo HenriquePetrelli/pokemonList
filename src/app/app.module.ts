@@ -7,8 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../components/home/home.component';
-import { HeaderMenuComponent } from '../components/header-menu/header-menu.component';
 import { PokemonCardsComponent } from '../components/pokemon-cards/pokemon-cards.component';
+import { HeaderNavComponent } from 'src/components/header-nav/header-nav.component';
 // MATERIAL
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -24,13 +24,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderMenuComponent,
     PokemonCardsComponent,
     HomeComponent,
+    HeaderNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSliderModule,
-    MatStepperModule
+    MatStepperModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@
 }
 
 $border-radius-size: 14px;
-$pokemon: #EC9B3B;
+$pokemon: #f44336;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -30,9 +30,8 @@ body {
   display: flex;
   text-align: left;
   flex-direction: row;
-  height: 100%;
+  margin-top: 5%;
   flex-wrap: wrap;
-  margin-bottom: 60px;
   max-width: 100%;
   justify-content: space-between;
   align-items: center;

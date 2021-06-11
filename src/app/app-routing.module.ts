@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderMenuComponent } from 'src/components/header-menu/header-menu.component';
+import { HeaderNavComponent } from 'src/components/header-nav/header-nav.component';
 import { HomeComponent } from 'src/components/home/home.component';
 import { PokemonCardsComponent } from 'src/components/pokemon-cards/pokemon-cards.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'header', component: HeaderMenuComponent },
+  { path: 'header', component: HeaderNavComponent },
   { path: 'pokemons', component: PokemonCardsComponent },
 ];
 @NgModule({

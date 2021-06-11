@@ -1,9 +1,9 @@
-<!-- <app-header-menu></app-header-menu> -->
+<app-header-nav></app-header-nav>
 <div class="slide-container">
   
   <mat-vertical-stepper>
     <mat-step *ngFor="let pokemon of pokemons">
-      <ng-template matStepLabel>{{pokemon.name}}</ng-template>
+      <ng-template matStepLabel>{{pokemon.name | titlecase}}</ng-template>
       <ng-template matStepContent>
         <div class="wrapper">
           <div class="pokemon-card">
@@ -11,7 +11,7 @@
               <img src={{pokemon.sprites.other.dream_world.front_default}} alt={{pokemon.name}} />
             </div>
             <div class="pokemon-card__level pokemon-card__level--pokeball">XP: {{pokemon.base_experience}}</div>
-            <div class="pokemon-card__unit-name">{{pokemon.id}}. {{pokemon.name}}</div>
+            <div class="pokemon-card__unit-name">{{pokemon.id}}. {{pokemon.name  | uppercase}}</div>
             <div class="pokemon-card__unit-description" *ngFor="let pokeAbility of pokemon.abilities">
               {{pokeAbility.ability.name}}
             </div>
@@ -35,5 +35,3 @@
     </mat-step>
   </mat-vertical-stepper>
 </div>
-<mat-paginator [length]="pokemonsCount" [pageSize]="20" (page)="paginatorAction($event)">
-</mat-paginator>
