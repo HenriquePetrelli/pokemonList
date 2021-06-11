@@ -1,4 +1,8 @@
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  background: #080606; 
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :host {
@@ -9,3 +13,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .mat-step-icon .mat-icon {
+   display: none;
+  }
+
+  .mat-vertical-content {
+    left: 36%;
+    outline: 0;
+    top: 6%;
+    position: fixed;
+    margin: auto;
+    text-align: center;
+}
+
+.mat-stepper-vertical, .mat-stepper-horizontal {
+  z-index: 999;
+  margin-left: 0;
+  position: relative;
+  display: flex!important;
+  overflow: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  box-shadow: 0px 0px 10px 6px black;
+  justify-content: flex-start;
+}

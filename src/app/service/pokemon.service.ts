@@ -1,14 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../..//environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private pokemonsUrl = " https://pokeapi.co/api/v2/pokemon?limit=10";
-  constructor(private http: HttpClient,) { }
+  
+  constructor(private http: HttpClient) { }
 
-  getPokemons() {
-    return this.http.get(this.pokemonsUrl)
+  async getPokemons(offset: Number) {
+    return await this.http.get(`${environment.urlBase}pokemon?"limit=100&offset=${offset}`)
   }
+
+  async getPokemonDetail(id: Number) {
+    return await this.http.get(`${environment.urlBase}pokemon/${id}`);
+  }
+
+
 }

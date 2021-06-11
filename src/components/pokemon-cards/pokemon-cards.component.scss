@@ -1,39 +1,198 @@
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-  }
+.mat-paginator {
+  bottom: 0;
+  background: #7b1fa2;
+  position: fixed;
+  width: 100%;
+  height: 6%;
+  right: 0;
+  z-index: 1;
+}
+
+$border-radius-size: 14px;
+$pokemon: #EC9B3B;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #9E9E9E;
+  margin-top: 30px;
+}
+
+.slide-container {
+  overflow: auto;
+  margin: auto auto;
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  height: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  background: white;
+}
+
+.controls-btn {
+  position: fixed;
+  top: 42%;
+}
+
+.control-btn {
+  width: 80px;
+  border-radius: 50px;
+  height: 80px;
+  background: #3c8d51;
+  box-shadow: -1px 15px 30px -12px black;
+  color: white;
+}
+
+.control-btn:hover {
+  background: #3c8d51;
+}
+
+.previous-btn {
+  left: 20%;
+}
+
+.next-btn {
+  right: 10%;
+  margin-left: 375px;
+}
+
+.wrapper {
+  padding-top: 40px;
+  margin: auto 30%;
+  padding-bottom: 40px;
   
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  &:focus {
+    outline: 0;
   }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
+}
+
+.pokemon-card {
+  background: white;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  border-radius: $border-radius-size + 5;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+}
+
+.pokemon-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: $border-radius-size;
+  border-top-right-radius: $border-radius-size;
+}
+
+.pokemon-card__image--pokeball {
+  background: url('../../assets/imgs/pokeball.jpg');
+  img {
+    width: 315px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    top: -65px;
+    height: 315px;
+    left: 0px;
+  }
+}
+
+.pokemon-card__level {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.pokemon-card__level--pokeball {
+  color: $pokemon;
+}
+
+.pokemon-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.pokemon-card__unit-description {
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #006cff;
+}
+
+.pokemon-card__unit-stats--pokeball {
+  background: $pokemon;
+  
+  .one-third {
+     border-right: 1px solid #BD7C2F;
+  }
+}
+
+.pokemon-card__unit-stats {
+  
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: $border-radius-size;
+  border-bottom-right-radius: $border-radius-size;
+  
+  .one-third {
+    width: 33%;
+    float: left;
+    padding: 20px 15px;
   }
   
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
+  sup {
+    position: absolute;
+    bottom: 4px; 
+    font-size: 45%;
+    margin-left: 2px;
   }
   
-  .flip-card-back {
-    background-color: #2980b9;
-    color: white;
-    transform: rotateY(180deg);
+  .stat {
+    position: relative;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
+  
+  .stat-value {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .no-border {
+    border-right: none;
+  }
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
