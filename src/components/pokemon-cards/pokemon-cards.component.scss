@@ -1,9 +1,11 @@
 .mat-paginator {
-  bottom: 0;
-  background: #7b1fa2;
+  top: 0;
+  background: transparent;
+  font-size: 1.2rem;
   position: fixed;
-  width: 100%;
-  height: 6%;
+  padding-top: 5px;
+  width: 50%;
+  height: 75px;
   right: 0;
   z-index: 1;
 }
@@ -30,13 +32,13 @@ body {
   display: flex;
   text-align: left;
   flex-direction: row;
-  margin-top: 5%;
   flex-wrap: wrap;
   max-width: 100%;
   justify-content: space-between;
   align-items: center;
   align-content: space-between;
   background: white;
+  margin-top: 70px;
 }
 
 .controls-btn {

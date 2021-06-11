@@ -1,6 +1,10 @@
 <app-header-nav></app-header-nav>
+
+<mat-paginator [length]="pokemonsCount" [pageSize]="20" (page)="paginatorAction($event)">
+</mat-paginator>
+
+
 <div class="slide-container">
-  
   <mat-vertical-stepper>
     <mat-step *ngFor="let pokemon of pokemons">
       <ng-template matStepLabel>{{pokemon.name | titlecase}}</ng-template>

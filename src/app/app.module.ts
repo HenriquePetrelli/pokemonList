@@ -25,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -56,7 +57,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatSliderModule,
     MatStepperModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,4 +12,7 @@ export class HeaderNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  redirectTo(route: String) {
+    location.href = `${route}`;
+  }
 }
