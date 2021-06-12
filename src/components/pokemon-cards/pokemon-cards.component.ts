@@ -51,7 +51,6 @@ export class PokemonCardsComponent implements OnInit {
         this.pokemons.push(response);
       });
     });
-    console.log(this.pokemons);
   }
 
   paginatorAction(pageEvent: PageEvent): void {

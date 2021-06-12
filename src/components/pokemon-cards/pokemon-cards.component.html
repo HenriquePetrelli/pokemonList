@@ -7,6 +7,7 @@
 <div class="slide-container">
   <mat-vertical-stepper>
     <mat-step *ngFor="let pokemon of pokemons">
+      
       <ng-template matStepLabel>{{pokemon.name | titlecase}}</ng-template>
       <ng-template matStepContent>
         <div class="wrapper">

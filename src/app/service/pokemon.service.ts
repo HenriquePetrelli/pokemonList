@@ -17,5 +17,9 @@ export class PokemonService {
     return await this.http.get(`${environment.urlBase}pokemon/${id}`);
   }
 
+  async getPokemonByName(name: String) {
+    return await this.http.get(`${environment.urlBase}pokemon/${name}`);
+  }
+
 
 }

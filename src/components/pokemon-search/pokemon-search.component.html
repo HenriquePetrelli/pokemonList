@@ -1,0 +1,39 @@
+<app-header-nav></app-header-nav>
+
+<div class="header">
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Pokemon</mat-label>
+      <input type="text" matInput placeholder="pokemon name" [(ngModel)]="pokemonName" name="pokemonName">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  </form>
+
+  <button  (click)="searchPokemonByName()" mat-button class="search-btn">
+    Search
+  </button>
+  </div>
+
+  <div class="content">
+    <div class="stats-container">
+      <div class="stats">
+        <h4 class="pokemon-name">{{this.pokemon}}</h4>
+        <div *ngFor="let pokemonStat of pokemonStats">
+      <p class="stat-text">{{pokemonStat.stat.name | titlecase}}: {{pokemonStat.base_stat}}%</p>
+      <mat-progress-bar *ngIf="pokemonStat.base_stat < 100" color="accent" mode="determinate" value={{pokemonStat.base_stat}}></mat-progress-bar>
+      <mat-progress-bar  *ngIf="pokemonStat.base_stat >= 100" color="warn" mode="determinate" value={{pokemonStat.base_stat}}></mat-progress-bar>
+    </div>
+  </div>
+  </div>
+    <div class="card-container">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front card">
+            <img class="img-pokemon" src= {{this.pokemonImage}} alt={{this.pokemon}}>
+          </div>
+          <div class="flip-card-back card">
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
