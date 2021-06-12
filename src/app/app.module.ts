@@ -10,6 +10,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { PokemonCardsComponent } from '../components/pokemon-cards/pokemon-cards.component';
 import { HeaderNavComponent } from 'src/components/header-nav/header-nav.component';
 import { PokemonSearchComponent } from '../components/pokemon-search/pokemon-search.component';
+import { ToastMsgComponent } from '../components/toast-msg/toast-msg.component';
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -28,6 +29,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     HomeComponent,
     HeaderNavComponent,
     PokemonSearchComponent,
+    ToastMsgComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatStepperModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

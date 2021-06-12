@@ -32,13 +32,13 @@ export class PokemonSearchComponent implements OnInit {
       this.pokemonStats = response.stats;
     }, error => {
       let msgError = this._helper.returnMsgToRequest(error);
+      this._helper.showToastMsg(msgError.error, "", 6000);
     });
   }
 
   searchPokemonByName() {
     let pokemon = this.pokemonName.toLowerCase().trim();
-    let request = this.getPokemonByName(pokemon);
-    console.log(request);
+    this.getPokemonByName(pokemon);
   }
 
 }

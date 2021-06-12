@@ -48,6 +48,7 @@ export class PokemonCardsComponent implements OnInit {
       this.getPokemonDetail(response.results);
     }, error => {
       let msgError = this._helper.returnMsgToRequest(error);
+       this._helper.showToastMsg(msgError.error, "", 6000);
     });
   }
 
@@ -57,6 +58,7 @@ export class PokemonCardsComponent implements OnInit {
         this.pokemons.push(response);
       }, error => {
         let msgError = this._helper.returnMsgToRequest(error);
+         this._helper.showToastMsg(msgError.error, "", 6000);
       });
     });
   }
