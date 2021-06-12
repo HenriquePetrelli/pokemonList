@@ -1,56 +1,55 @@
 .background-gif {
-    position: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-  }
-  
-  .background-opacity {
-    background: black;
-    position: fixed;
-    z-index: 1;
-    opacity: 0.8;
-  }
-  
-  .content {
-    text-align: center;
-    margin: auto;
-    position: relative;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .max-height-width {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .btn-start {
-    z-index: 2;
-    padding: 25px 35px;
-    font-size: 1.6rem;
-    box-shadow: 0px 0px 20px 5px #424242;
-  }
-  
-  .btn-start:hover {
-    background: #551d6d;
-    box-shadow: 0px 0px 30px 10px #424242;
-  }
-  
-  .icon-start {
-    margin-top: -12%;
-    font-size: 2.5rem;
-    margin-left: 10px;
-  }
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
 
-  h1 {
-    color: white;
-    z-index: 2;
-  }
+.background-opacity {
+  background: black;
+  position: fixed;
+  z-index: 1;
+  opacity: 0.8;
+}
 
-  
+.content {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.max-height-width {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-start {
+  z-index: 2;
+  padding: 25px 35px;
+  font-size: 1.6rem;
+  box-shadow: 0px 0px 20px 5px #424242;
+}
+
+.btn-start:hover {
+  background: #551d6d;
+  box-shadow: 0px 0px 30px 10px #424242;
+}
+
+.icon-start {
+  margin-top: -12%;
+  font-size: 2.5rem;
+  margin-left: 10px;
+}
+
+h1 {
+  color: white;
+  z-index: 2;
+}
+
 .card {
   --color1: rgb(0, 231, 255);
   --color2: rgb(255, 0, 231);
@@ -63,9 +62,8 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5% / 3.5%;
-  box-shadow: -13px -13px 13px -15px var(--color1), 
-    13px 13px 13px -15px var(--color2), 
-    0 0 4px 2px rgba(255,255,255,0.5),
+  box-shadow: -13px -13px 13px -15px var(--color1),
+    13px 13px 13px -15px var(--color2), 0 0 4px 2px rgba(255, 255, 255, 0.5),
     0 35px 25px -15px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
@@ -75,7 +73,7 @@
   transform-origin: center;
   z-index: 10;
   overflow: hidden;
-  transform: translate3d(0,0,-1px); 
+  transform: translate3d(0, 0, -1px);
 }
 
 .card > span {
@@ -86,7 +84,7 @@
 .card:before,
 .card:after {
   content: "";
-  opacity: .1;
+  opacity: 0.1;
   mix-blend-mode: screen;
   position: absolute;
   left: 0;
@@ -141,7 +139,7 @@
 
 .card.active:before,
 .card.active:after {
-  animation: none;  
+  animation: none;
 }
 .card.active:after {
   filter: brightness(2.5);
@@ -153,29 +151,39 @@
 .demo .card:nth-of-type(3) {
   width: 124px;
   height: 170px;
-  box-shadow: 0 0 1px 1px rgba(white,0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px 1px rgba(white, 0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
   animation: none;
 }
 
 .demo .card:nth-of-type(1),
 .demo .card:nth-of-type(2),
 .demo .card:nth-of-type(3) {
-  &:before, &:after {
+  &:before,
+  &:after {
     animation: none;
     opacity: 1;
-  } 
+  }
 }
 .demo .card:nth-of-type(1) {
-  &:before, &:after { display: none; }
+  &:before,
+  &:after {
+    display: none;
+  }
 }
 .demo .card:nth-of-type(2) {
   background: none;
-  &:before { display: none; }
+  &:before {
+    display: none;
+  }
 }
 .demo .card:nth-of-type(3) {
   background: none;
-  &:before { background-position: center; }
-  &:after { display: none; }
+  &:before {
+    background-position: center;
+  }
+  &:after {
+    display: none;
+  }
 }
 
 .operator {
@@ -185,29 +193,46 @@
 }
 
 @keyframes holoSparkle {
-  0%, 5%, 100% { opacity: 0.2; background-position: 50% 50%; }
-  33% { opacity: 1; background-position: 40% 40%; filter: brightness(2); }
-  45% { opacity: 0.4; }
-  66% { opacity: 1; background-position: 60% 60%; filter: brightness(2); }
+  0%,
+  5%,
+  100% {
+    opacity: 0.2;
+    background-position: 50% 50%;
+  }
+  33% {
+    opacity: 1;
+    background-position: 40% 40%;
+    filter: brightness(2);
+  }
+  45% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 1;
+    background-position: 60% 60%;
+    filter: brightness(2);
+  }
 }
 
 @keyframes holoGradient {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.05;
     background-position: 50% 50%;
   }
   33% {
     background-position: 100% 100%;
-    opacity: .66;
+    opacity: 0.66;
   }
   66% {
     background-position: 0% 0%;
-    opacity: .66;
+    opacity: 0.66;
   }
 }
 
 @keyframes holoCard {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
   }
   33% {
@@ -218,13 +243,13 @@
   }
 }
 
-
-html, body {
+html,
+body {
   height: 100%;
   background-color: #333844;
   padding: 0;
   z-index: -1;
-  transform: translate3d(0,0,0.1px);
+  transform: translate3d(0, 0, 0.1px);
 }
 body {
   color: white;
@@ -249,7 +274,7 @@ p {
 }
 
 .demo,
-.cards { 
+.cards {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,12 +289,16 @@ p {
 
 .cards .card {
   &:nth-child(2) {
-    &, &:before, &:after {
+    &,
+    &:before,
+    &:after {
       animation-delay: 0.2s;
     }
   }
   &:nth-child(3) {
-    &, &:before, &:after {
+    &,
+    &:before,
+    &:after {
       animation-delay: 0.4s;
     }
   }

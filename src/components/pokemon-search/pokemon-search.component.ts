@@ -11,15 +11,15 @@ export class PokemonSearchComponent implements OnInit {
   pokemonName: String;
   pokemon: any;
   pokemonImage: String;
-  pokemonStats:any;
+  pokemonStats: any;
   constructor(
-   private _pokemonService: PokemonService,
-   private _helper: Helper
+    private _pokemonService: PokemonService,
+    private _helper: Helper
   ) {
     this.pokemonName = "charizard";
     this.pokemonImage = "";
     this.pokemonStats = [];
-   }
+  }
 
   ngOnInit(): void {
     this.getPokemonByName(this.pokemonName);
@@ -37,7 +37,7 @@ export class PokemonSearchComponent implements OnInit {
 
   searchPokemonByName() {
     let pokemon = this.pokemonName.toLowerCase().trim();
-    let request= this.getPokemonByName(pokemon);
+    let request = this.getPokemonByName(pokemon);
     console.log(request);
   }
 

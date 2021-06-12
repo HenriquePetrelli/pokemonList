@@ -19,7 +19,7 @@ export class PokemonCardsComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  
+
   constructor(
     private _pokemonService: PokemonService,
     private formBuilder: FormBuilder,
@@ -37,7 +37,7 @@ export class PokemonCardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemons(this.pageIndex);
-  
+
   }
 
   async getPokemons(offset: Number): Promise<void> {
@@ -81,5 +81,5 @@ export class PokemonCardsComponent implements OnInit {
   toggleLayout(event: any) {
     this.paginatorLayout = event.checked;
   }
-    
+
 }
