@@ -10,7 +10,7 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
   async getPokemons(offset: Number) {
-    return await this.http.get(`${environment.urlBase}pokemon?"limit=100&offset=${offset}`)
+    return await this.http.get(`${environment.urlBase}pokemon?"limit=100&offset=${offset}`);
   }
 
   async getPokemonDetail(id: Number) {

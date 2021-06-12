@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
 import { PokemonService } from 'src/app/service/pokemon.service';
+import { Helper } from 'src/app/utils/helper';
 
 @Component({
   selector: 'app-pokemon-cards',
@@ -19,14 +20,17 @@ export class PokemonCardsComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   
-  constructor(private pokemonService: PokemonService,private _formBuilder: FormBuilder) {
+  constructor(
+    private _pokemonService: PokemonService,
+    private formBuilder: FormBuilder,
+    private _helper: Helper) {
     this.paginatorLayout = false;
     this.pageEvent = new PageEvent();
     this.pageIndex = 0
-    this.firstFormGroup = this._formBuilder.group({
+    this.firstFormGroup = this.formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
-    this.secondFormGroup = this._formBuilder.group({
+    this.secondFormGroup = this.formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
   }
@@ -38,17 +42,21 @@ export class PokemonCardsComponent implements OnInit {
 
   async getPokemons(offset: Number): Promise<void> {
     this.pokemons = [] = [];
-    (await this.pokemonService.getPokemons(offset)).subscribe((response: any) => {
+    (await this._pokemonService.getPokemons(offset)).subscribe((response: any) => {
       this.response = response;
       this.pokemonsCount = response.count;
       this.getPokemonDetail(response.results);
+    }, error => {
+      let msgError = this._helper.returnMsgToRequest(error);
     });
   }
 
   getPokemonDetail(pokemonList: any) {
     pokemonList.forEach(async (pokemon: any) => {
-      (await this.pokemonService.getPokemonDetail(pokemon.name)).subscribe((response: any) => {
+      (await this._pokemonService.getPokemonDetail(pokemon.name)).subscribe((response: any) => {
         this.pokemons.push(response);
+      }, error => {
+        let msgError = this._helper.returnMsgToRequest(error);
       });
     });
   }

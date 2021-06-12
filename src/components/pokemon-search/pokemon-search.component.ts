@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/service/pokemon.service';
+import { Helper } from 'src/app/utils/helper';
 
 @Component({
   selector: 'app-pokemon-search',
@@ -12,7 +13,8 @@ export class PokemonSearchComponent implements OnInit {
   pokemonImage: String;
   pokemonStats:any;
   constructor(
-   private pokemonService: PokemonService
+   private _pokemonService: PokemonService,
+   private _helper: Helper
   ) {
     this.pokemonName = "charizard";
     this.pokemonImage = "";
@@ -24,17 +26,19 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   async getPokemonByName(name: String) {
-    (await this.pokemonService.getPokemonByName(name)).subscribe((response: any) => {
+    let request = (await this._pokemonService.getPokemonByName(name)).subscribe((response: any) => {
       this.pokemon = response.name;
       this.pokemonImage = response.sprites.other.dream_world.front_default
       this.pokemonStats = response.stats;
-      console.log(this.pokemon)
+    }, error => {
+      let msgError = this._helper.returnMsgToRequest(error);
     });
   }
 
   searchPokemonByName() {
     let pokemon = this.pokemonName.toLowerCase().trim();
-    this.getPokemonByName(pokemon);
+    let request= this.getPokemonByName(pokemon);
+    console.log(request);
   }
 
 }
